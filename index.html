@@ -29,14 +29,62 @@
 
       <header class="hero">
         <h1 class="title-main">MIDNIGHT GAMES</h1>
-        <p class="role-subtitle">By [Your Name]</p>
+        <p class="role-subtitle">By Jooahn</p>
         <div class="desc-container">
           <p class="fading-desc">
             Immersive unblocked gaming. No proxies, no fluff—just pure speed.
           </p>
         </div>
       </header>
+      <nav class="category-nav">
+        <button class="cat-btn active" onclick="filterByCategory('all')">
+          All
+        </button>
+        <button class="cat-btn" onclick="filterByCategory('Trending')">
+          Trending 🔥
+        </button>
 
+        <button class="cat-btn" onclick="filterByCategory('Action')">
+          Action 👊
+        </button>
+        <button class="cat-btn" onclick="filterByCategory('Horror')">
+          Horror 👻
+        </button>
+        <button class="cat-btn" onclick="filterByCategory('Cars')">
+          Cars 🏎️
+        </button>
+        <button class="cat-btn" onclick="filterByCategory('Sports')">
+          Sports ⚽
+        </button>
+        <button class="cat-btn" onclick="filterByCategory('Puzzle')">
+          Puzzle 🧩
+        </button>
+        <button class="cat-btn" onclick="filterByCategory('FPS')">
+          FPS 🔫
+        </button>
+        <button class="cat-btn" onclick="filterByCategory('TowerDefense')">
+          Defense 🏰
+        </button>
+        <button class="cat-btn" onclick="filterByCategory('IO')">
+          IO Games 🌐
+        </button>
+        <button class="cat-btn" onclick="filterByCategory('Cards')">
+          Cards 🃏
+        </button>
+        <button class="cat-btn" onclick="filterByCategory('Clicker')">
+          Clicker 🖱️
+        </button>
+
+        <button class="cat-btn" onclick="filterByCategory('Surface')">
+          Surface 🌊
+        </button>
+        <button class="cat-btn" onclick="filterByCategory('Retro')">
+          Retro 🕹️
+        </button>
+        <button class="cat-btn" onclick="filterByCategory('App')">
+          Apps 📱
+        </button>
+      </nav>
       <section class="content-area">
         <h2 class="section-label">Featured Games</h2>
         <div class="bento-grid" id="featuredGrid"></div>
@@ -46,7 +94,8 @@
         <h2 class="section-label">
           Trending Now <span class="glow-text">🔥</span>
         </h2>
-        <div class="bento-grid" id="trendingGrid"></div>
+
+        <div class="trending-wrapper" id="trendingGrid"></div>
       </section>
 
       <section class="content-area" id="apps">
