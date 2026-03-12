@@ -105,3 +105,5 @@ function createTile(g) {
 }
 
 render();
+// This replaces the <i> tags with actual SVG icons
+lucide.createIcons();

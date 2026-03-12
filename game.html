@@ -21,6 +21,67 @@
       .controls {
         margin-top: 20px;
       }
+      /* Layout Container */
+      .play-layout {
+        display: grid;
+        grid-template-columns: 1fr 300px; /* Game takes most space, sidebar is fixed */
+        gap: 30px;
+        align-items: start;
+      }
+
+      /* Player Styling */
+      .player-wrapper {
+        width: 100%;
+        background: #000;
+        border-radius: 15px;
+        overflow: hidden;
+        border: 1px solid rgba(0, 240, 255, 0.2);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        aspect-ratio: 16 / 9; /* Modern way to handle size */
+      }
+
+      #gameFrame {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .game-header {
+        margin-bottom: 20px;
+      }
+
+      #gameCategories {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      /* Suggested Sidebar */
+      .suggestions-sidebar {
+        max-height: 85vh;
+        overflow-y: auto;
+        padding-right: 10px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--cyan) transparent;
+      }
+
+      .suggestions-sidebar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .suggestions-sidebar::-webkit-scrollbar-thumb {
+        background: var(--cyan);
+        border-radius: 10px;
+      }
+
+      /* Responsive: Stack sidebar on bottom for small screens */
+      @media (max-width: 1100px) {
+        .play-layout {
+          grid-template-columns: 1fr;
+        }
+        .suggestions-sidebar {
+          max-height: none;
+        }
+      }
     </style>
   </head>
   <body>
@@ -33,28 +94,95 @@
       </nav>
     </aside>
     <main class="main-content">
-      <div class="theater">
-        <h1 id="gameTitle" class="title-main">Loading...</h1>
-        <iframe id="gameFrame" allowfullscreen></iframe>
-        <div class="controls">
-          <button
-            onclick="document.getElementById('gameFrame').requestFullscreen()"
-            class="tile-info"
-            style="
-              position: static;
-              cursor: pointer;
-              background: var(--card);
-              color: var(--cyan);
-              border: 1px solid var(--cyan);
-              padding: 10px 20px;
-              border-radius: 5px;
-            "
-          >
-            ⛶ FULLSCREEN
-          </button>
+      <div class="play-layout">
+        <div class="game-area">
+          <div class="game-header">
+            <h1 id="gameTitle" class="title-main">Loading...</h1>
+            <div class="game-meta" id="gameCategories"></div>
+          </div>
+
+          <div class="player-wrapper">
+            <iframe id="gameFrame" allowfullscreen></iframe>
+          </div>
+
+          <div class="controls">
+            <button
+              onclick="document.getElementById('gameFrame').requestFullscreen()"
+              class="cat-btn active"
+            >
+              ⛶ FULLSCREEN
+            </button>
+            <button
+              onclick="launchStealth(document.getElementById('gameFrame').src)"
+              class="cat-btn"
+            >
+              👻 STEALTH TAB
+            </button>
+          </div>
+
+          <div class="game-description">
+            <h2 class="section-label">Description</h2>
+            <p class="fading-desc">
+              Experience this title in full high-definition. Part of the
+              Midnight Deep Sea collection.
+            </p>
+          </div>
         </div>
+
+        <aside class="suggestions-sidebar">
+          <h2 class="section-label" style="margin-top: 0">More Games</h2>
+          <div class="bento-grid" id="suggestedGrid"></div>
+        </aside>
       </div>
     </main>
+    <script>
+      // Load data and fill the page
+      async function initGamePage() {
+        const params = new URLSearchParams(window.location.search);
+        const gameId = params.get("id");
+
+        const res = await fetch("data/games.json");
+        const games = await res.json();
+        const currentGame = games.find((g) => g.id === gameId);
+
+        if (currentGame) {
+          document.getElementById("gameTitle").innerText = currentGame.title;
+          document.getElementById("gameFrame").src = currentGame.url;
+
+          // Show Categories underneath
+          const catContainer = document.getElementById("gameCategories");
+          catContainer.innerHTML = currentGame.categories
+            .map(
+              (cat) =>
+                `<span class="cat-btn" style="pointer-events:none">${cat}</span>`,
+            )
+            .join("");
+
+          // Fill Sidebar with random games
+          const suggestedGrid = document.getElementById("suggestedGrid");
+          const others = games
+            .filter((g) => g.id !== gameId)
+            .sort(() => 0.5 - Math.random());
+          suggestedGrid.innerHTML = others
+            .slice(0, 6)
+            .map((g) => createTile(g))
+            .join("");
+        }
+      }
+
+      // Reuse your createTile function from render.js here
+      function createTile(g) {
+        return `
+    <div class="game-tile small" onclick="window.location.href='game.html?id=${g.id}'">
+        <img src="${g.img}" alt="${g.title}">
+        <div class="tile-info">
+            <h3>${g.title}</h3>
+        </div>
+    </div>`;
+      }
+
+      initGamePage();
+    </script>
     <script src="assets/js/core.js"></script>
   </body>
 </html>

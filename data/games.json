@@ -142,5 +142,13 @@
     "img": "https://imgs.crazygames.com/shellshockersio_16x9/20260203211252/shellshockersio_16x9-cover?metadata=none&quality=60&height=6983",
     "url": "https://shellshock.io/",
     "size": "small"
+  },
+  {
+    "id": "mario-64",
+    "title": "Super Mario 64",
+    "categories": ["Retro", "Action", "Trending"],
+    "img": "https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_7/SI_N64_SuperMario64_image1600w.jpg",
+    "url": "https://augustberchelmann.com/mario/",
+    "size": "small"
   }
 ]

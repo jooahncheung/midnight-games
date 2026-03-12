@@ -5,15 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Midnight Games | Surface</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
   </head>
   <body>
     <aside class="sidebar">
       <div class="side-logo">M</div>
+
       <nav class="side-nav">
-        <a href="index.html" class="active">🏠</a>
-        <a href="#trending">🔥</a>
-        <a href="#apps">📱</a>
+        <a href="#gameSearch" class="active" title="Home"
+          ><i data-lucide="home"></i
+        ></a>
+        <a href="#trending" title="Trending"><i data-lucide="flame"></i></a>
+        <a href="#apps" title="Apps"><i data-lucide="layout-grid"></i></a>
       </nav>
+
+      <div class="sidebar-footer">
+        <button onclick="panic()" title="PANIC" class="panic-btn">
+          <i data-lucide="shield-alert"></i>
+        </button>
+
+        <p
+          class="section-label"
+          style="font-size: 0.5rem; margin: 15px 0 10px 0; opacity: 0.5"
+        >
+          CLOAK
+        </p>
+        <div class="cloak-options">
+          <button onclick="applyCloak('docs')" title="Google Docs">
+            <i data-lucide="file-text"></i>
+          </button>
+          <button onclick="applyCloak('classroom')" title="Google Classroom">
+            <i data-lucide="graduation-cap"></i>
+          </button>
+          <button onclick="applyCloak('drive')" title="Google Drive">
+            <i data-lucide="hard-drive"></i>
+          </button>
+          <button onclick="applyCloak('google')" title="Google Search">
+            <i data-lucide="search"></i>
+          </button>
+        </div>
+      </div>
     </aside>
 
     <main class="main-content">
@@ -29,10 +60,11 @@
 
       <header class="hero">
         <h1 class="title-main">MIDNIGHT GAMES</h1>
-        <p class="role-subtitle">By Jooahn</p>
+
+        <p class="role-subtitle"></p>
         <div class="desc-container">
           <p class="fading-desc">
-            Immersive unblocked gaming. No proxies, no fluff—just pure speed.
+            Immersive unblocked gaming. No limits, just pure fun!
           </p>
         </div>
       </header>
@@ -85,7 +117,7 @@
           Apps 📱
         </button>
       </nav>
-      <section class="content-area">
+      <section class="content-area" id="featured">
         <h2 class="section-label">Featured Games</h2>
         <div class="bento-grid" id="featuredGrid"></div>
       </section>
