@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Playing | Midnight Games</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+      .theater {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px;
+      }
+      iframe {
+        width: 100%;
+        aspect-ratio: 16/9;
+        border: 2px solid var(--cyan);
+        border-radius: 15px;
+        max-width: 1100px;
+      }
+      .controls {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="side-logo">M</div>
+      <nav class="side-nav"><a href="index.html">🏠</a></nav>
+    </aside>
+    <main class="main-content">
+      <div class="theater">
+        <h1 id="gameTitle" class="title-main">Loading...</h1>
+        <iframe id="gameFrame" allowfullscreen></iframe>
+        <div class="controls">
+          <button
+            onclick="document.getElementById('gameFrame').requestFullscreen()"
+            class="tile-info"
+            style="
+              position: static;
+              cursor: pointer;
+              background: var(--card);
+              color: var(--cyan);
+              border: 1px solid var(--cyan);
+              padding: 10px 20px;
+              border-radius: 5px;
+            "
+          >
+            ⛶ FULLSCREEN
+          </button>
+        </div>
+      </div>
+    </main>
+    <script src="assets/js/core.js"></script>
+  </body>
+</html>

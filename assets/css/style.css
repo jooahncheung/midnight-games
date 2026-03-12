@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+:root {
+  /* 1. Spread the gradient: Changed 60% to 80% so the transition is smoother.
+     2. Lifted the color: Used #1a2638 for a clearer 'Midnight' blue glow.
+  */
+  --bg: radial-gradient(
+    circle at 50% 0%,
+    #1a2638 0%,
+    #05070a 80%,
+    #020408 100%
+  );
+  --sidebar-bg: #010204; /* Slightly darker than the main bg to create a 'step' */
+  --card: rgba(
+    21,
+    28,
+    43,
+    0.6
+  ); /* Semi-transparent so the bg glow peeks through */
+  --cyan: #00f0ff;
+  --text: #e0e0e0;
+  --sidebar-w: 80px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  /* Combined into the shorthand for better browser support */
+  background: var(--bg) no-repeat fixed;
+  background-color: #05070a;
+
+  color: var(--text);
+  font-family: "Poppins", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Add this to your sidebar class to make the background change obvious */
+.sidebar {
+  background-color: var(--sidebar-bg);
+  border-right: 1px solid rgba(0, 240, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+/* Fix for the "Purple/Blue" link issue */
+a {
+  text-decoration: none;
+  color: inherit; /* Forces link to stay white/gray */
+  outline: none;
+}
+
+/* Sidebar Customization */
+.sidebar {
+  width: var(--sidebar-w);
+  height: 100vh;
+  background: var(--sidebar-bg);
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid rgba(0, 240, 255, 0.15); /* Subtle cyan glow line */
+  z-index: 1000;
+}
+
+.side-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--cyan);
+  margin: 30px 0;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.side-nav a {
+  font-size: 26px;
+  padding: 15px 0;
+  text-align: center;
+  filter: grayscale(1) opacity(0.5);
+  transition: var(--transition);
+  border-left: 3px solid transparent;
+}
+
+.side-nav a:hover,
+.side-nav a.active {
+  filter: grayscale(0) opacity(1);
+  background: linear-gradient(90deg, rgba(0, 240, 255, 0.1), transparent);
+  border-left: 3px solid var(--cyan);
+  transform: translateX(2px);
+}
+
+/* Main Content Area */
+.main-content {
+  margin-left: var(--sidebar-w);
+  padding: 60px 5%;
+  width: 100%;
+}
+
+/* Custom Instructions: Borders & Hero */
+.title-main {
+  /* Removed solid border, using border-image for a fading effect */
+  border-left: 5px solid;
+  border-image: linear-gradient(to bottom, var(--cyan), transparent) 1;
+  padding-left: 20px;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.role-subtitle {
+  border-left: 5px solid;
+  border-image: linear-gradient(to top, var(--cyan), transparent) 1; /* Fades upward to meet the name */
+  padding-left: 20px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: var(--cyan);
+  margin: 0;
+}
+.desc-container {
+  margin-top: 35px;
+  padding-top: 20px;
+  border-top: 1px solid;
+  border-image: linear-gradient(90deg, var(--cyan), transparent) 1; /* Fading top border */
+  max-width: 600px;
+}
+
+.fading-desc {
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+/* Grid & Game Cards */
+.section-label {
+  margin: 60px 0 25px 0;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--cyan);
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-auto-rows: 220px;
+  gap: 25px;
+}
+
+.game-tile {
+  background: var(--card);
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.game-tile:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--cyan);
+  box-shadow: 0 15px 35px rgba(0, 240, 255, 0.15);
+}
+
+.game-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.game-tile:hover img {
+  transform: scale(1.1);
+}
+
+/* Professional Game Info Overlay */
+.tile-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(2, 4, 8, 1) 20%, transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tile-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #fff; /* Keep title white */
+}
+
+.tile-info p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--cyan); /* Category glows cyan */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+/* --- Search Bar Customization --- */
+/* Container for the search bar to keep it aligned */
+.top-nav {
+  width: 100%;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: flex-start; /* Aligns it to the left */
+}
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* Increased from 450px to 600px for a more "command center" feel */
+}
+
+#gameSearch {
+  width: 100%; /* This ensures it fills the 600px wrapper */
+  padding: 18px 20px 18px 50px; /* Slightly taller for a more modern, 'soft' feel */
+  background: var(--card);
+  border: 1px solid rgba(0, 240, 255, 0.1);
+  border-radius: 12px; /* Matches your 'soft' Poppins vibe better than 10px */
+  color: white;
+  font-family:
+    "Poppins", sans-serif; /* Ensures the font carries over to the input */
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+/* The Glow Effect when you click it */
+#gameSearch:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+  background: #111a2b;
+}
+
+/* Magnifying glass icon positioning */
+.search-wrapper::before {
+  content: "🔍";
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  opacity: 0.5;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add a little glow to the trending section label */
+#trending .section-label {
+  color: #ff4500; /* Orange-Red glow */
+  text-shadow: 0 0 10px rgba(255, 69, 0, 0.3);
+}
+
+.glow-text {
+  animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+/* Container for the horizontal scroll */
+.trending-wrapper {
+  display: flex;
+  overflow-x: auto; /* Allows side scrolling */
+  gap: 20px;
+  padding: 20px 0;
+  scrollbar-width: none; /* Hides scrollbar on Firefox */
+  scroll-behavior: smooth;
+}
+
+.trending-wrapper::-webkit-scrollbar {
+  display: none; /* Hides scrollbar on Chrome/Safari */
+}
+
+/* Force tiles in the trending section to stay a fixed width */
+#trendingGrid .game-tile {
+  min-width: 280px; /* Adjust based on how "tempting" you want them */
+  flex-shrink: 0; /* Prevents tiles from squishing */
+}
+/* Add this to style.css to give FNAF games a special feel */
+.game-tile[onclick*="fnaf"]:hover {
+  border-color: #ff0000;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+}
+/* This makes the "large" games take up more space in the grid */
+.game-tile.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* On mobile, we force them back to normal so they don't break the screen */
+@media (max-width: 600px) {
+  .game-tile.large {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}

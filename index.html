@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Midnight Games | Surface</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="side-logo">M</div>
+      <nav class="side-nav">
+        <a href="index.html" class="active">🏠</a>
+        <a href="#trending">🔥</a>
+        <a href="#apps">📱</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <nav class="top-nav">
+        <div class="search-wr apper">
+          <input
+            type="text"
+            id="gameSearch"
+            placeholder="Search for Supercars, Slope, etc..."
+          />
+        </div>
+      </nav>
+
+      <header class="hero">
+        <h1 class="title-main">MIDNIGHT GAMES</h1>
+        <p class="role-subtitle">By [Your Name]</p>
+        <div class="desc-container">
+          <p class="fading-desc">
+            Immersive unblocked gaming. No proxies, no fluff—just pure speed.
+          </p>
+        </div>
+      </header>
+
+      <section class="content-area">
+        <h2 class="section-label">Featured Games</h2>
+        <div class="bento-grid" id="featuredGrid"></div>
+      </section>
+
+      <section class="content-area" id="trending">
+        <h2 class="section-label">
+          Trending Now <span class="glow-text">🔥</span>
+        </h2>
+        <div class="bento-grid" id="trendingGrid"></div>
+      </section>
+
+      <section class="content-area" id="apps">
+        <h2 class="section-label">
+          Deep Sea Apps <span class="glow-text">📱</span>
+        </h2>
+        <div class="bento-grid" id="appsGrid"></div>
+      </section>
+    </main>
+
+    <script src="assets/js/render.js"></script>
+    <script src="assets/js/core.js"></script>
+  </body>
+</html>
