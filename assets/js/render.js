@@ -8,10 +8,10 @@ let allGames = []; // Global variable to store data
 async function render() {
   try {
     const res = await fetch("data/games.json");
-    if (!res.ok) throw new Error("Failed to fetch");
+    if (!res.ok) throw new Error("Database offline");
     allGames = await res.json();
 
-    // Initial load: fill all grids
+    // Initial load
     updateGrids(allGames, true);
   } catch (error) {
     console.error("Depth Error:", error);

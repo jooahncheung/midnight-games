@@ -104,6 +104,15 @@
     "size": "small"
   },
   {
+    "id": "fnae",
+    "title": "Five Nights at Epstein's",
+    "developer": "Jeffrey Epstein",
+    "description": "Can you survive five nights with Diddy and Epstein?",
+    "img": "https://sprunkiretakemod.net//data/image/game/five-nights-at-epsteins.jpg",
+    "url": "https://harshulmoon.github.io/fnae.html",
+    "category": "Horror"
+  },
+  {
     "id": "agar-io",
     "title": "Agar.io",
     "categories": ["Trending", "IO"],
@@ -150,5 +159,27 @@
     "img": "https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_7/SI_N64_SuperMario64_image1600w.jpg",
     "url": "https://augustberchelmann.com/mario/",
     "size": "small"
+  },
+  {
+    "id": "infinite-craft",
+    "title": "Infinite Craft",
+    "developer": "Neal Agarwal",
+    "description": "Start with Water, Fire, Earth, and Wind to create everything in the universe.",
+    "img": "https://neal.fun/share-cards/infinite-craft.png",
+    "url": "https://infinite-craft.gg/infinite-craft/",
+    "category": "Puzzle",
+    "isTrending": true,
+    "isFeatured": true
+  },
+  {
+    "id": "doge-ub",
+    "title": "Doge UB",
+    "developer": "Community",
+    "description": "A sleek, unblocked browser proxy and utility tool.",
+    "img": "https://avatars.githubusercontent.com/u/130938124?s=280&v=4",
+    "url": "https://educationate.storage.googleapis.com/index.html#/",
+    "category": "App",
+    "isTrending": false,
+    "isFeatured": false
   }
 ]
