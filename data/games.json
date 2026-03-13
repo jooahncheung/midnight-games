@@ -106,11 +106,10 @@
   {
     "id": "fnae",
     "title": "Five Nights at Epstein's",
-    "developer": "Jeffrey Epstein",
-    "description": "Can you survive five nights with Diddy and Epstein?",
     "img": "https://sprunkiretakemod.net//data/image/game/five-nights-at-epsteins.jpg",
     "url": "https://harshulmoon.github.io/fnae.html",
-    "category": "Horror"
+    "category": "Horror",
+    "size": "small"
   },
   {
     "id": "agar-io",
@@ -163,23 +162,125 @@
   {
     "id": "infinite-craft",
     "title": "Infinite Craft",
-    "developer": "Neal Agarwal",
-    "description": "Start with Water, Fire, Earth, and Wind to create everything in the universe.",
     "img": "https://neal.fun/share-cards/infinite-craft.png",
     "url": "https://infinite-craft.gg/infinite-craft/",
     "category": "Puzzle",
-    "isTrending": true,
-    "isFeatured": true
+    "size": "small"
   },
   {
     "id": "doge-ub",
     "title": "Doge UB",
-    "developer": "Community",
-    "description": "A sleek, unblocked browser proxy and utility tool.",
     "img": "https://avatars.githubusercontent.com/u/130938124?s=280&v=4",
     "url": "https://educationate.storage.googleapis.com/index.html#/",
     "category": "App",
-    "isTrending": false,
-    "isFeatured": false
+    "size": "small"
+  },
+  {
+    "id": "traffic-rider",
+    "title": "Traffic Rider",
+    "img": "https://i.ytimg.com/vi/jrj26kqJjpE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCg4HN4Nigd2azui0SmNHAF42jQKw",
+    "url": "https://traffic-rider.io/traffic-rider.embed",
+    "categories": ["Cars", "Action", "Trending"],
+    "category": "Cars",
+    "size": "small"
+  },
+  {
+    "id": "racing-limits",
+    "title": "Racing Limits",
+    "img": "https://imgs.crazygames.com/racing-limits_16x9/20250711091800/racing-limits_16x9-cover?metadata=none&quality=100&width=1200&height=630&fit=crop",
+    "url": "https://racinglimits.io/",
+    "categories": ["Cars", "Trending"],
+    "category": "Cars",
+    "size": "small"
+  },
+  {
+    "id": "two-player-org",
+    "title": "2 Player Games",
+    "img": "https://i.ytimg.com/vi/uz20Z2XzveY/maxresdefault.jpg",
+    "url": "https://www.twoplayergames.org",
+    "categories": ["Multiplayer", "App"],
+    "category": "Trending",
+    "size": "small"
+  },
+  {
+    "id": "slither-io",
+    "title": "Slither.io",
+    "img": "https://m.media-amazon.com/images/I/81Wz+QwjHSL.png",
+    "url": "https://slither.io/",
+    "categories": ["IO", "Trending"],
+    "category": "IO",
+    "size": "small"
+  },
+  {
+    "id": "paper-io-2",
+    "title": "Paper.io 2",
+    "img": "https://imgs.crazygames.com/paper-io-2_16x9/20250214024143/paper-io-2_16x9-cover?metadata=none&quality=60&height=5251",
+    "url": "https://paperio.site/",
+    "categories": ["IO", "Action"],
+    "category": "IO",
+    "size": "small"
+  },
+  {
+    "id": "capybara-clicker",
+    "title": "Capybara Clicker",
+    "img": "https://i.ytimg.com/vi/5wCkdEgxONk/maxresdefault.jpg",
+    "url": "https://capybara-game.com/",
+    "categories": ["Clicker", "Trending"],
+    "category": "Clicker",
+    "size": "small"
+  },
+  {
+    "id": "trader-sim",
+    "title": "Trader",
+    "img": "https://spribe.co/assets/images/games/trader@2x.png?v=2.5.59",
+    "url": "https://trader.spribegaming.com/?currency=USD&operator=demo&jurisdiction=CW&lang=EN&return_url=https%3A%2F%2Fspribe.co%2Fgames&user=33161&token=QE7g6GKsttEzXrSVx6i6HMumIGHb5FmT",
+    "categories": ["Casino", "App"],
+    "category": "Casino",
+    "size": "small"
+  },
+  {
+    "id": "aviator-crash",
+    "title": "Aviator",
+    "img": "https://ejaw.net/wp-content/uploads/2025/04/ae0568e2c572eb5365c8d0268db823ad511884c4dd1f179f1e403a4e7d98d752_600.png",
+    "url": "https://aviator-demo.spribegaming.com/?currency=USD&operator=demo&jurisdiction=CW&lang=EN&return_url=https%3A%2F%2Fspribe.co%2Fgames&user=28063&token=fTeX9Wji3vJmdU5ITR1o5AktnIr4sdSe",
+    "categories": ["Casino", "Trending"],
+    "category": "Casino",
+    "size": "small"
+  },
+  {
+    "id": "balloon-pop-casino",
+    "title": "Balloon",
+    "img": "https://d1xzt0aa5gnjrn.cloudfront.net/0/2025/05/29/cc-balloon-screenshot-1-spribe-570x335.webp",
+    "url": "https://turbo.spribegaming.com/balloon?currency=USD&operator=demo&jurisdiction=CW&lang=EN&return_url=https:%2F%2Fspribe.co%2Fgames&user=69555&token=22pvdmsv9pdolhkrfbq6e1Z9YN01xSCG",
+    "categories": ["Casino", "Clicker"],
+    "category": "Casino",
+    "size": "small"
+  },
+  {
+    "id": "mini-roulette",
+    "title": "Mini Roulette",
+    "img": "https://spribe.co/assets/images/games/carousel/screen_rl-1.jpeg",
+    "url": "https://turbo.spribegaming.com/mini-roulette?currency=USD&operator=demo&jurisdiction=CW&lang=EN&return_url=https:%2F%2Fspribe.co%2Fgames&user=25763&token=8uZDDX1mgQWecQjJSOVPfyAUWty03TE7",
+    "categories": ["Casino", "Cards"],
+    "category": "Casino",
+    "size": "small"
+  },
+  {
+    "id": "mines-weeper",
+    "title": "Mines",
+    "img": "https://media2.dev.to/dynamic/image/width=1600,height=900,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Faevz3oto14glnehoiy1v.png",
+    "url": "https://turbo.spribegaming.com/mines?currency=USD&operator=demo&jurisdiction=CW&lang=EN&return_url=https:%2F%2Fspribe.co%2Fgames&user=17262&token=9gLX2ajGtlDhvLWymgFP3YcmvZ1pb5sa",
+    "categories": ["Casino", "Puzzle"],
+    "category": "Casino",
+    "size": "small"
+  },
+  {
+    "id": "plinko-balls",
+    "title": "Plinko Balls",
+    "img": "https://spribe.co/assets/images/games/Pl@2x.png?v=2.5.59",
+    "url": "https://turbo.spribegaming.com/plinko?currency=USD&operator=demo&jurisdiction=CW&lang=EN&return_url=https:%2F%2Fspribe.co%2Fgames&user=27670&token=ouR93ikx7qLAHabGVd4D9x1nAzOi49Ih",
+    "categories": ["Casino", "Clicker"],
+    "category": "Casino",
+    "size": "small"
   }
 ]
