@@ -152,13 +152,13 @@ a {
 
 /* Custom Instructions: Borders & Hero */
 .title-main {
+  font-family:;
   border-left: 4px solid;
   border-image: linear-gradient(to bottom, var(--cyan), transparent) 1;
   padding-left: 20px;
   font-size: clamp(1.8rem, 4vw, 2.8rem); /* Slightly smaller */
   margin: 0;
 }
-
 .role-subtitle {
   border-left: 5px solid;
   border-image: linear-gradient(to top, var(--cyan), transparent) 1; /* Fades upward to meet the name */

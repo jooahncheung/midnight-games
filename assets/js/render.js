@@ -1,5 +1,5 @@
 /**
- * MIDNIGHT GAMES - Render Engine
+ * Cobalt GAMES - Render Engine
  * Restored Internal Embedding + Multi-Category Filtering
  */
 
