@@ -68,6 +68,50 @@ function launchStealth(url) {
   win.document.body.appendChild(iframe);
 }
 
+// whole tab stealth
+
+function siteCloak() {
+  const siteUrl = window.location.href; // Grabs your current Vercel URL
+
+  // 1. Open the ghost tab
+  const win = window.open("about:blank", "_blank");
+  if (!win) {
+    alert("Pop-up blocked! Please allow pop-ups for Stealth Mode.");
+    return;
+  }
+
+  // 2. Setup the Ghost Document
+  const doc = win.document;
+  doc.title = "Cobalt Academy | Portal"; // The "Fake" Tab Name
+
+  // Inject Favicon (Google Docs icon for maximum stealth)
+  const link = doc.createElement("link");
+  link.rel = "icon";
+  link.href = "https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico";
+  doc.head.appendChild(link);
+
+  // 3. Apply Styles for the Ghost Window
+  const style = doc.createElement("style");
+  style.textContent = `
+    body, html { margin: 0; padding: 0; height: 100vh; width: 100vw; overflow: hidden; background: #000; }
+    iframe { width: 100%; height: 100%; border: none; }
+  `;
+  doc.head.appendChild(style);
+
+  // 4. Create the Iframe
+  const iframe = doc.createElement("iframe");
+  iframe.src = siteUrl;
+  iframe.allow =
+    "autoplay; fullscreen; encrypted-media; clipboard-read; clipboard-write";
+  doc.body.appendChild(iframe);
+
+  // 5. Final Stealth Move: Wipe the evidence
+  // This replaces the Cobalt URL in your history with Google
+  window.location.replace(
+    "https://www.google.com/search?q=educational+resources+for+students",
+  );
+}
+
 //cloaking
 const cloaks = {
   docs: {

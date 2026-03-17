@@ -259,12 +259,6 @@ a {
   justify-content: flex-start; /* Aligns it to the left */
 }
 
-.search-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 600px; /* Increased from 450px to 600px for a more "command center" feel */
-}
-
 #gameSearch {
   width: 100%; /* This ensures it fills the 600px wrapper */
   padding: 18px 20px 18px 50px; /* Slightly taller for a more modern, 'soft' feel */
@@ -298,6 +292,50 @@ a {
 }
 html {
   scroll-behavior: smooth;
+}
+.search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between search and stealth button */
+}
+
+#gameSearch {
+  flex: 1; /* Makes the search bar take up the remaining space */
+  padding: 18px 20px 18px 50px;
+  background: var(--card);
+  border: 1px solid rgba(0, 240, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  outline: none;
+}
+
+.nav-stealth-btn {
+  background: var(--card);
+  border: 1px solid rgba(0, 240, 255, 0.1);
+  color: var(--cyan);
+  width: 55px;
+  height: 55px; /* Matches search bar height */
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.nav-stealth-btn:hover {
+  border-color: var(--cyan);
+  background: rgba(0, 240, 255, 0.05);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.nav-stealth-btn i {
+  width: 20px;
+  height: 20px;
 }
 
 /* --- Trending Section Label --- */
