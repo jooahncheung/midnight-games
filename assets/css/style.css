@@ -469,3 +469,26 @@ html {
   box-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
   transform: scale(1.1);
 }
+/* clock */
+
+.role-subtitle {
+  /* Level 4: Left border for the name/role info */
+  border-left: 4px solid var(--cyan);
+  padding-left: 20px;
+
+  font-family:
+    "Courier New", monospace; /* Monospace makes it look like a system log */
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--cyan);
+  margin: 5px 0 0 0;
+  font-size: 0.85rem;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+}
+
+.title-main {
+  /* Matches the clock alignment */
+  border-left: 4px solid transparent;
+  padding-left: 20px;
+  margin-bottom: 0;
+}

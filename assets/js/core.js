@@ -177,3 +177,35 @@ window.addEventListener("keydown", (e) => {
 });
 // This replaces the <i> tags with actual SVG icons
 lucide.createIcons();
+//clock
+function updateClock() {
+  const now = new Date();
+
+  // Formatting options for a "Level 4" look
+  const options = {
+    weekday: "short",
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+  };
+
+  const dateStr = now.toLocaleDateString("en-US", options).toUpperCase();
+  const timeStr = now.toLocaleTimeString("en-US", {
+    hour12: false,
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+
+  // Output: SAT, MAR 21, 2026 | 13:05:42
+  const displayStr = `SYS_LOCAL_TIME: ${dateStr} | ${timeStr}`;
+
+  const clockElement = document.getElementById("system-clock");
+  if (clockElement) {
+    clockElement.innerText = displayStr;
+  }
+}
+
+// Run immediately and then every second
+setInterval(updateClock, 1000);
+updateClock();
