@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>Playing | Cobalt Games</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
       .theater {
         display: flex;
@@ -87,11 +88,45 @@
   <body>
     <aside class="sidebar">
       <div class="side-logo">M</div>
+
       <nav class="side-nav">
-        <a href="index.html">🏠</a>
-        <a href="index.html#trending">🔥</a>
-        <a href="index.html#apps">📱</a>
+        <a href="index.html#gameSearch" title="Home"
+          ><i data-lucide="home"></i
+        ></a>
+        <a href="index.html#trending" title="Trending"
+          ><i data-lucide="flame"></i
+        ></a>
+        <a href="index.html#apps" title="Apps"
+          ><i data-lucide="layout-grid"></i
+        ></a>
       </nav>
+
+      <div class="sidebar-footer">
+        <button onclick="panic()" title="PANIC" class="panic-btn">
+          <i data-lucide="shield-alert"></i>
+        </button>
+
+        <p
+          class="section-label"
+          style="font-size: 0.5rem; margin: 15px 0 10px 0; opacity: 0.5"
+        >
+          CLOAK
+        </p>
+        <div class="cloak-options">
+          <button onclick="applyCloak('docs')" title="Google Docs">
+            <i data-lucide="file-text"></i>
+          </button>
+          <button onclick="applyCloak('classroom')" title="Google Classroom">
+            <i data-lucide="graduation-cap"></i>
+          </button>
+          <button onclick="applyCloak('drive')" title="Google Drive">
+            <i data-lucide="hard-drive"></i>
+          </button>
+          <button onclick="applyCloak('google')" title="Google Search">
+            <i data-lucide="search"></i>
+          </button>
+        </div>
+      </div>
     </aside>
     <main class="main-content">
       <div class="play-layout">
